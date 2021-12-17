@@ -1,0 +1,10 @@
+asgiref==3.4.1
+beautifulsoup4==4.10.0
+Django==4.0
+django-bootstrap4==21.1
+django-clear-cache==0.3
+django-feather==0.3.0
+django-widget-tweaks==1.4.9
+soupsieve==2.3.1
+sqlparse==0.4.2
+tzdata==2021.5
