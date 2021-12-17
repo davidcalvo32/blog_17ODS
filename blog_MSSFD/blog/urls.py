@@ -17,11 +17,17 @@ from django.contrib import admin
 from django.urls import path
 
 from categorias.views import ListadoCategorias
-
+from detallesblog.views import DetallesBlog
+from entradas.views import ListadoEntradas
+from usuarios.views import ListadoUsuarios
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('categorias/', ListadoCategorias.as_view(template_name = 'categorias/index.html'), name = 'listadordecategorias'),
+    path('categorias/', ListadoCategorias.as_view(template_name = 'categorias/index.html'), name = 'listadodecategorias'),
+    path('detallesblog/', DetallesBlog.as_view(template_name = "detallesblog/index.html"), name = "detallesdelblog"),
+    path('entradas/', ListadoEntradas.as_view(template_name = 'entradas/index.html'), name = 'listadodeentradas'),
+    path('usuarios/', ListadoUsuarios.as_view(template_name = 'usuarios/index.html'), name = 'listadodeusuarios'),
 ]
+
