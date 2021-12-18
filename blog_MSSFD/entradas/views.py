@@ -1,7 +1,8 @@
 from django.forms import forms
 from django.shortcuts import render
 
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Entradas
@@ -16,3 +17,7 @@ from django import forms
 
 class ListadoEntradas(ListView):
     model = Entradas
+
+
+class CrearEntradas(TemplateView):
+    template_name = "crear.html"

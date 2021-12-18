@@ -16,18 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from categorias.views import ListadoCategorias
+from categorias.views import ListadoCategorias, CrearCategoria
 from detallesblog.views import DetallesBlog
-from entradas.views import ListadoEntradas
-from usuarios.views import ListadoUsuarios
+from entradas.views import ListadoEntradas, CrearEntradas
+from usuarios.views import ListadoUsuarios, CrearUsuarios
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('categorias/', ListadoCategorias.as_view(template_name = 'categorias/index.html'), name = 'listadodecategorias'),
+    path('categorias/crear', CrearCategoria.as_view(template_name ='categorias/crear.html'), name = 'crearcategoria'),
     path('detallesblog/', DetallesBlog.as_view(template_name = "detallesblog/index.html"), name = "detallesdelblog"),
     path('entradas/', ListadoEntradas.as_view(template_name = 'entradas/index.html'), name = 'listadodeentradas'),
+    path('entradas/crear', CrearEntradas.as_view(template_name ='entradas/crear.html'), name = 'crearentradas'),
     path('usuarios/', ListadoUsuarios.as_view(template_name = 'usuarios/index.html'), name = 'listadodeusuarios'),
+    path('usuarios/crear', CrearUsuarios.as_view(template_name = 'usuarios/crear.html'), name = 'crearusuarios'),
 ]
 

@@ -17,7 +17,7 @@
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
     {% load icon %}
 
     <!-- Favicons -->
@@ -109,35 +109,41 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Usuarios</h1>
+            <h1 class="h2">Crear Usuarios</h1>
         
         </div>
 
         <div class="table-responsive">
-          <a type="button" class="btn btn-success mb-3" href = "{%url 'crearusuarios' %}"">Agregar</a>
-            <table class="table table-striped table-sm">
-            <thead>
-                <tr>
-                <th>Nombre</th>
-                <th>Imagen</th>
-                <th>Web</th>
-                <th>Fecha de actualización</th>
-                <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>Axel</td>
-                <td>Foto de usuario</td>
-                <td>mssfd.com</td>
-                <td>20-12-2021</td>
-                <td>
-                  <button type="button" class="btn btn-info btn-sm">Editar</button>
-                  <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
-                </td>
-                </tr>
-            </tbody>
-            </table>
+          <form>
+            <div class="form-group"> 
+              <div class="mb-4 mt-4">
+                <label for="nombre" class="negritatxt">Nombre de usuario</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombreHelp" required>
+              </div>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="fotodeperfil" class="form-label negritatxt">Seleccione una foto de perfil</label>
+                <div class="custom-file">
+                   <input class="custom-file-input" type="file" id="fotodeperfil">
+                   <label for="fotodeperfil" class="custom-file-label">Imagen</label>
+                </div>
+              </div>
+
+            <div class="form-group"> 
+              <div class="mb-4 mt-4">
+                <label for="web" class="negritatxt">Página Web</label>
+                <input type="text" class="form-control" id="web" name="web" aria-describedby="webHelp">
+              </div>
+              <div class="form-group">  
+                <div class="mb-4 mt-4">
+                  <label for="descripcion" class="negritatxt">Descripción</label>
+                  <textarea class="form-control" id="descripcion" name = "descripcion" rows="3"></textarea>
+                </div>
+              </div>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+          </form>
         </div>
         </main>
     </div>
